@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Aikixd.CodeGeneration.TemplatesT4.Templates.Internal" #>
+
+using System;
+
+namespace <#= this.ClassInfo.Namespace #>
+{
+	<#= MakeClassNestingStart() #>
+
+	partial class <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> : IEquatable<<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #>>
+	{
+		public bool Equals(<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> other)
+        {
+            if (object.ReferenceEquals(other, null))
+				return false;
+			
+			return
+			    <#= string.Join(
+					" && \r\n                ",
+					this
+						.StatedMembers
+						.Select(x => $"this.{x}.Equals(other.{x})")) #>;
+        }
+
+        <#= this.MakeGetHashCode() #>
+
+        <#= ClassMaker.MakeEqualsConformity(this.ClassInfo) #>
+	}
+	<#= this.MakeClassNestingEnd() #>
+}

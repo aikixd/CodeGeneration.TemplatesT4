@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageOutputPath>C:\Dev\LocalPackages\Aikixd.CodeGeneration\</PackageOutputPath>
+    <Version>0.6.0-prerelease</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <Authors>Dmitriy Sorkin</Authors>
+    <Company>Dmitriy Sorkin</Company>
+    <Description>CSharp generation templates.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aikixd.CodeGeneration.CSharp" Version="0.6.0-prerelease" />
+    <PackageReference Include="System.CodeDom" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="RuntimeTextTemplate1.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RuntimeTextTemplate1.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\EqualityThroughMembers.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EqualityThroughMembers.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\EqualsConformity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EqualsConformity.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Internal\ClassNestingEnd.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ClassNestingEnd.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Internal\ClassNestingStart.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ClassNestingStart.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Internal\Constructor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Constructor.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Internal\EqualsConformity.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EqualsConformity.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Internal\HashCodeMethod.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HashCodeMethod.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\StructuralConstructor.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StructuralConstructor.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="RuntimeTextTemplate1.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RuntimeTextTemplate1.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\EqualityThroughMembers.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EqualityThroughMembers.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\EqualsConformity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EqualsConformity.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Internal\ClassNestingEnd.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ClassNestingEnd.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Internal\ClassNestingStart.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ClassNestingStart.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Internal\Constructor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Constructor.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Internal\EqualsConformity.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EqualsConformity.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Internal\HashCodeMethod.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HashCodeMethod.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\StructuralConstructor.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>StructuralConstructor.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+
+
+</Project>

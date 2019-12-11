@@ -1,0 +1,39 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+		public override bool Equals(object obj)
+        {
+            if (obj is <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> c)
+                return this.Equals(c);
+
+            return false;
+        }
+
+        public static bool operator == (<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> left, <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> right)
+        {
+            if (object.ReferenceEquals(left, null))
+			{
+				if (object.ReferenceEquals(right, null))
+					return true;
+
+				return false;
+			}
+			
+			return left.Equals(right);
+        }
+
+        public static bool operator != (<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> left, <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> right)
+        {
+            if (object.ReferenceEquals(left, null))
+			{
+				if (object.ReferenceEquals(right, null))
+					return false;
+
+				return true;
+			}
+			
+			return left.Equals(right) == false;
+        }
