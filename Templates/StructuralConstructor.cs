@@ -19,7 +19,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class StructuralConstructor : StructuralConstructorBase
     {
@@ -31,71 +31,78 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
         {
             this.Write("\r\nnamespace ");
             
-            #line 8 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Namespace));
+            #line 8 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\t");
             
-            #line 10 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeClassNestingStart(this.ClassInfo)));
+            #line 10 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingStart(this.TypeInfo)));
             
             #line default
             #line hidden
-            this.Write("\r\n\tpartial class ");
+            this.Write("\r\n\tpartial ");
             
-            #line 11 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Name));
+            #line 11 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TypeAnalysis.GetTypeKeyword(this.TypeInfo)));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 11 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n\t\tpublic ");
             
-            #line 13 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Name));
+            #line 13 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 13 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            #line 13 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.MakeConstructorParameters()));
             
             #line default
             #line hidden
             this.Write(")\r\n\t\t{\r\n\t\t\t");
             
-            #line 15 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            #line 15 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
  foreach (var mi in this.GetDataMembers()) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t\r\n\t\t\t\tthis.");
             
-            #line 17 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            #line 17 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mi.name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 17 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            #line 17 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mi.name));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\n\t\t\t");
             
-            #line 19 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            #line 19 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t\r\n\t\t}\r\n\t}\r\n\t");
             
-            #line 23 "E:\Dev\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeClassNestingEnd(this.ClassInfo)));
+            #line 23 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingEnd(this.TypeInfo)));
             
             #line default
             #line hidden

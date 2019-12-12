@@ -18,9 +18,9 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingStart.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingStart.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ClassNestingStart : ClassNestingStartBase
+    public partial class TypeNestingStart : TypeNestingStartBase
     {
 #line hidden
         /// <summary>
@@ -30,21 +30,28 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
         {
             this.Write("\r\n");
             
-            #line 7 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingStart.tt"
+            #line 7 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingStart.tt"
  foreach (var n in this.Nesting) { 
             
             #line default
             #line hidden
-            this.Write("\tpartial class ");
+            this.Write("\tpartial ");
             
-            #line 8 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingStart.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(n)));
+            #line 8 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingStart.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TypeAnalysis.GetTypeKeyword(n)));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 8 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingStart.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(n)));
             
             #line default
             #line hidden
             this.Write(" {\r\n");
             
-            #line 9 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingStart.tt"
+            #line 9 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingStart.tt"
  } 
             
             #line default
@@ -60,7 +67,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ClassNestingStartBase
+    public class TypeNestingStartBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

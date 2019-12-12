@@ -18,7 +18,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class EqualsConformity : EqualsConformityBase
     {
@@ -30,23 +30,23 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
         {
             this.Write("\r\n\t\tpublic override bool Equals(object obj)\r\n        {\r\n            if (obj is ");
             
-            #line 9 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 9 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(" c)\r\n                return this.Equals(c);\r\n\r\n            return false;\r\n       " +
                     " }\r\n\r\n        public static bool operator == (");
             
-            #line 15 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 15 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(" left, ");
             
-            #line 15 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 15 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
@@ -56,7 +56,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
 			{
 				if (object.ReferenceEquals(right, null))
 					return true;
-
+					
 				return false;
 			}
 			
@@ -65,15 +65,15 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
 
         public static bool operator != (");
             
-            #line 28 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 28 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(" left, ");
             
-            #line 28 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 28 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden

@@ -7,13 +7,13 @@
 
 using System;
 
-namespace <#= this.ClassInfo.Namespace #>
+namespace <#= this.TypeInfo.Namespace #>
 {
-	<#= MakeClassNestingStart() #>
+	<#= ClassMaker.MakeTypeNestingStart(this.TypeInfo) #>
 
-	partial class <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> : IEquatable<<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #>>
+	partial <#= TypeAnalysis.GetTypeKeyword(this.TypeInfo) #> <#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> : IEquatable<<#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #>>
 	{
-		public bool Equals(<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> other)
+		public bool Equals(<#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> other)
         {
             if (object.ReferenceEquals(other, null))
 				return false;
@@ -28,7 +28,7 @@ namespace <#= this.ClassInfo.Namespace #>
 
         <#= this.MakeGetHashCode() #>
 
-        <#= ClassMaker.MakeEqualsConformity(this.ClassInfo) #>
+        <#= ClassMaker.MakeEqualsConformity(this.DataTypeInfo) #>
 	}
-	<#= this.MakeClassNestingEnd() #>
+	<#= ClassMaker.MakeTypeNestingEnd(this.TypeInfo) #>
 }

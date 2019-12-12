@@ -1,4 +1,5 @@
 ﻿using Aikixd.CodeGeneration.CSharp.TypeInfo;
+using Aikixd.CodeGeneration.TemplatesT4.Templates.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +10,22 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
 {
     partial class EqualityThroughMembers
     {
-        public ClassInfo ClassInfo { get; }
+        public DataTypeInfo DataTypeInfo { get; }
+        public TypeInfo TypeInfo => this.DataTypeInfo.TypeInfo;
         protected IEnumerable<string> StatedMembers { get; }
 
-        public EqualityThroughMembers(ClassInfo classInfo, IEnumerable<string> statedMembers)
+        public EqualityThroughMembers(DataTypeInfo dataTypeInfo)
+            : this(
+                dataTypeInfo,
+                TypeAnalysis
+                    .GenuineDataMembers(dataTypeInfo)
+                    .Where(m => m.IsStatic == false)
+                    .Select(m => m.Name))
+        { }
+
+        public EqualityThroughMembers(DataTypeInfo classInfo, IEnumerable<string> statedMembers)
         {
-            this.ClassInfo = classInfo ?? throw new ArgumentNullException(nameof(classInfo));
+            this.DataTypeInfo = classInfo ?? throw new ArgumentNullException(nameof(classInfo));
             this.StatedMembers = statedMembers ?? throw new ArgumentNullException(nameof(statedMembers));
         }
 
@@ -22,16 +33,6 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
         protected string MakeGetHashCode()
         {
             return new Internal.HashCodeMethod(this.StatedMembers).TransformText();
-        }
-
-        protected string MakeClassNestingStart()
-        {
-            return new Internal.ClassNestingStart(this.ClassInfo).TransformText();
-        }
-
-        protected string MakeClassNestingEnd()
-        {
-            return new Internal.ClassNestingEnd(this.ClassInfo).TransformText();
         }
     }
 }

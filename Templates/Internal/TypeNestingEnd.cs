@@ -18,9 +18,9 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingEnd.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingEnd.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ClassNestingEnd : ClassNestingEndBase
+    public partial class TypeNestingEnd : TypeNestingEndBase
     {
 #line hidden
         /// <summary>
@@ -30,14 +30,14 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
         {
             this.Write("\r\n");
             
-            #line 7 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingEnd.tt"
+            #line 7 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingEnd.tt"
  foreach (var n in this.Nesting) { 
             
             #line default
             #line hidden
             this.Write("\t}\r\n");
             
-            #line 9 "E:\Dev\CodeGeneration.TemplatesT4\Templates\Internal\ClassNestingEnd.tt"
+            #line 9 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\TypeNestingEnd.tt"
  } 
             
             #line default
@@ -53,7 +53,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ClassNestingEndBase
+    public class TypeNestingEndBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

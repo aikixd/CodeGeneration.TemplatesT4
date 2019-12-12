@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aikixd.CodeGeneration.CSharp" Version="0.6.0-prerelease" />
+    <PackageReference Include="Aikixd.CodeGeneration.CSharp" Version="0.6.4-prerelease" />
     <PackageReference Include="System.CodeDom" Version="4.7.0" />
   </ItemGroup>
 
@@ -36,15 +36,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EqualsConformity.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Internal\ClassNestingEnd.cs">
+    <Compile Update="Templates\Internal\TypeNestingEnd.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ClassNestingEnd.tt</DependentUpon>
+      <DependentUpon>TypeNestingEnd.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Internal\ClassNestingStart.cs">
+    <Compile Update="Templates\Internal\TypeNestingStart.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ClassNestingStart.tt</DependentUpon>
+      <DependentUpon>TypeNestingStart.tt</DependentUpon>
     </Compile>
     <Compile Update="Templates\Internal\Constructor.cs">
       <DesignTime>True</DesignTime>
@@ -81,13 +81,13 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EqualsConformity.cs</LastGenOutput>
     </None>
-    <None Update="Templates\Internal\ClassNestingEnd.tt">
+    <None Update="Templates\Internal\TypeNestingEnd.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ClassNestingEnd.cs</LastGenOutput>
+      <LastGenOutput>TypeNestingEnd.cs</LastGenOutput>
     </None>
-    <None Update="Templates\Internal\ClassNestingStart.tt">
+    <None Update="Templates\Internal\TypeNestingStart.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ClassNestingStart.cs</LastGenOutput>
+      <LastGenOutput>TypeNestingStart.cs</LastGenOutput>
     </None>
     <None Update="Templates\Internal\Constructor.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

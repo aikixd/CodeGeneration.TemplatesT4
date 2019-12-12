@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
 {
-    partial class ClassNestingEnd
+    partial class TypeNestingEnd
     {
-        public ClassNestingEnd(ClassInfo classInfo)
+        public TypeNestingEnd(TypeInfo classInfo)
         {
-            this.ClassInfo = classInfo;
+            this.TypeInfo = classInfo;
         }
 
-        protected ClassInfo ClassInfo { get; }
+        protected TypeInfo TypeInfo { get; }
 
         protected IEnumerable<TypeInfo> Nesting
         {
@@ -22,7 +22,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
             {
                 var l = new LinkedList<TypeInfo>();
 
-                var n = this.ClassInfo.TypeInfo.ContainingType;
+                var n = this.TypeInfo.ContainingType;
 
                 while (n != null)
                 {

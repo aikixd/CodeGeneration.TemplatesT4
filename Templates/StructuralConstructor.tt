@@ -5,12 +5,12 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Aikixd.CodeGeneration.TemplatesT4.Templates.Internal" #>
 
-namespace <#= this.ClassInfo.Namespace #>
+namespace <#= this.TypeInfo.Namespace #>
 {
-	<#= ClassMaker.MakeClassNestingStart(this.ClassInfo) #>
-	partial class <#= this.ClassInfo.Name #>
+	<#= ClassMaker.MakeTypeNestingStart(this.TypeInfo) #>
+	partial <#= TypeAnalysis.GetTypeKeyword(this.TypeInfo) #> <#= this.TypeInfo.Name #>
 	{
-		public <#= this.ClassInfo.Name #>(<#= this.MakeConstructorParameters() #>)
+		public <#= this.TypeInfo.Name #>(<#= this.MakeConstructorParameters() #>)
 		{
 			<# foreach (var mi in this.GetDataMembers()) { #>
 				
@@ -20,5 +20,5 @@ namespace <#= this.ClassInfo.Namespace #>
 		
 		}
 	}
-	<#= ClassMaker.MakeClassNestingEnd(this.ClassInfo) #>
+	<#= ClassMaker.MakeTypeNestingEnd(this.TypeInfo) #>
 }

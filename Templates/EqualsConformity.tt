@@ -5,12 +5,12 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="Aikixd.CodeGeneration.TemplatesT4.Templates.Internal" #>
 
-namespace <#= this.ClassInfo.Namespace #>
+namespace <#= this.TypeInfo.Namespace #>
 {
-	<#= ClassMaker.MakeClassNestingStart(this.ClassInfo) #>
-	partial class <#= this.ClassInfo.Name #>
+	<#= ClassMaker.MakeTypeNestingStart(this.TypeInfo) #>
+	partial class <#= this.TypeInfo.Name #>
 	{
-		<#= ClassMaker.MakeEqualsConformity(this.ClassInfo) #>
+		<#= ClassMaker.MakeEqualsConformity(this.DataTypeInfo) #>
 	}
-	<#= ClassMaker.MakeClassNestingEnd(this.ClassInfo) #>
+	<#= ClassMaker.MakeTypeNestingEnd(this.TypeInfo) #>
 }

@@ -9,11 +9,12 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
 {
     partial class EqualsConformity
     {
-        protected ClassInfo ClassInfo { get; }
+        protected DataTypeInfo DataTypeInfo { get; }
+        protected TypeInfo TypeInfo => this.DataTypeInfo.TypeInfo;
 
-        public EqualsConformity(ClassInfo classInfo)
+        public EqualsConformity(DataTypeInfo dataTypeInfo)
         {
-            this.ClassInfo = classInfo;
+            this.DataTypeInfo = dataTypeInfo;
         }
     }
 }

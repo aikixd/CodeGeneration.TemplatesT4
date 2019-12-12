@@ -5,5 +5,5 @@
 <#@ import namespace="System.Collections.Generic" #>
 
 <# foreach (var n in this.Nesting) { #>
-	partial class <#= ClassMaker.MakeTypedClassName(n) #> {
+	partial <#= TypeAnalysis.GetTypeKeyword(n) #> <#= ClassMaker.MakeTypedTypeName(n) #> {
 <# } #>

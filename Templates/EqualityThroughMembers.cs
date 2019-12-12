@@ -19,7 +19,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class EqualityThroughMembers : EqualityThroughMembersBase
     {
@@ -31,43 +31,50 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
         {
             this.Write("\r\nusing System;\r\n\r\nnamespace ");
             
-            #line 10 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Namespace));
+            #line 10 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\t");
             
-            #line 12 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(MakeClassNestingStart()));
+            #line 12 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingStart(this.TypeInfo)));
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n\tpartial class ");
+            this.Write("\r\n\r\n\tpartial ");
             
-            #line 14 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 14 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TypeAnalysis.GetTypeKeyword(this.TypeInfo)));
+            
+            #line default
+            #line hidden
+            this.Write(" ");
+            
+            #line 14 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(" : IEquatable<");
             
-            #line 14 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 14 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(">\r\n\t{\r\n\t\tpublic bool Equals(");
             
-            #line 16 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedClassName(this.ClassInfo)));
+            #line 16 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypedTypeName(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write(" other)\r\n        {\r\n            if (object.ReferenceEquals(other, null))\r\n\t\t\t\tret" +
                     "urn false;\r\n\t\t\t\r\n\t\t\treturn\r\n\t\t\t    ");
             
-            #line 22 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            #line 22 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(
 					" && \r\n                ",
 					this
@@ -78,22 +85,22 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
             #line hidden
             this.Write(";\r\n        }\r\n\r\n        ");
             
-            #line 29 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            #line 29 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.MakeGetHashCode()));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n        ");
             
-            #line 31 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeEqualsConformity(this.ClassInfo)));
+            #line 31 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeEqualsConformity(this.DataTypeInfo)));
             
             #line default
             #line hidden
             this.Write("\r\n\t}\r\n\t");
             
-            #line 33 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.MakeClassNestingEnd()));
+            #line 33 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualityThroughMembers.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingEnd(this.TypeInfo)));
             
             #line default
             #line hidden

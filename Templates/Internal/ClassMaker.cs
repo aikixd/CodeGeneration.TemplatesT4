@@ -11,10 +11,15 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
     {
         public static string MakeTypedClassName(ClassInfo nfo)
         {
-            return MakeTypedClassName(nfo.TypeInfo);
+            return MakeTypedTypeName(nfo.TypeInfo);
         }
 
-        public static string MakeTypedClassName(TypeInfo nfo)
+        public static string MakeTypedStructName(StructInfo nfo)
+        {
+            return MakeTypedTypeName(nfo.TypeInfo);
+        }
+
+        public static string MakeTypedTypeName(TypeInfo nfo)
         {
             if (nfo.TypeParameters.Count() == 0)
                 return nfo.Name;
@@ -27,19 +32,19 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
             return new HashCodeMethod(members).TransformText();
         }
 
-        public static string MakeClassNestingStart(ClassInfo classInfo)
+        public static string MakeTypeNestingStart(TypeInfo typeInfo)
         {
-            return new ClassNestingStart(classInfo).TransformText();
+            return new TypeNestingStart(typeInfo).TransformText();
         }
 
-        public static string MakeClassNestingEnd(ClassInfo classInfo)
+        public static string MakeTypeNestingEnd(TypeInfo typeInfo)
         {
-            return new ClassNestingEnd(classInfo).TransformText();
+            return new TypeNestingEnd(typeInfo).TransformText();
         }
 
-        public static string MakeEqualsConformity(ClassInfo classInfo)
+        public static string MakeEqualsConformity(DataTypeInfo dataTypeInfo)
         {
-            return new EqualsConformity(classInfo).TransformText();
+            return new EqualsConformity(dataTypeInfo).TransformText();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class EqualsConformity : EqualsConformityBase
     {
@@ -31,36 +31,36 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
         {
             this.Write("\r\nnamespace ");
             
-            #line 8 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Namespace));
+            #line 8 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\t");
             
-            #line 10 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeClassNestingStart(this.ClassInfo)));
+            #line 10 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingStart(this.TypeInfo)));
             
             #line default
             #line hidden
             this.Write("\r\n\tpartial class ");
             
-            #line 11 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassInfo.Name));
+            #line 11 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n\t\t");
             
-            #line 13 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeEqualsConformity(this.ClassInfo)));
+            #line 13 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeEqualsConformity(this.DataTypeInfo)));
             
             #line default
             #line hidden
             this.Write("\r\n\t}\r\n\t");
             
-            #line 15 "E:\Dev\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeClassNestingEnd(this.ClassInfo)));
+            #line 15 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\EqualsConformity.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingEnd(this.TypeInfo)));
             
             #line default
             #line hidden

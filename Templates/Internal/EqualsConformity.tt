@@ -6,26 +6,26 @@
 
 		public override bool Equals(object obj)
         {
-            if (obj is <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> c)
+            if (obj is <#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> c)
                 return this.Equals(c);
 
             return false;
         }
 
-        public static bool operator == (<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> left, <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> right)
+        public static bool operator == (<#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> left, <#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> right)
         {
             if (object.ReferenceEquals(left, null))
 			{
 				if (object.ReferenceEquals(right, null))
 					return true;
-
+					
 				return false;
 			}
 			
 			return left.Equals(right);
         }
 
-        public static bool operator != (<#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> left, <#= ClassMaker.MakeTypedClassName(this.ClassInfo) #> right)
+        public static bool operator != (<#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> left, <#= ClassMaker.MakeTypedTypeName(this.TypeInfo) #> right)
         {
             if (object.ReferenceEquals(left, null))
 			{

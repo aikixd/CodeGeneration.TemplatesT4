@@ -9,16 +9,18 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
 {
     partial class StructuralConstructor
     {
-        public ClassInfo ClassInfo { get; }
+        public DataTypeInfo DataTypeInfo { get; }
+        public TypeInfo TypeInfo { get; }
 
-        public StructuralConstructor(ClassInfo classInfo)
+        public StructuralConstructor(DataTypeInfo dataTypeInfo)
         {
-            this.ClassInfo = classInfo;
+            this.DataTypeInfo = dataTypeInfo;
+            this.TypeInfo = dataTypeInfo.TypeInfo;
         }
 
         protected IEnumerable<(string name, TypeInfo type)> GetDataMembers()
         {
-            return this.ClassInfo.Members
+            return this.DataTypeInfo.DataMembers
                 .Where(filter)
                 .Select(map);
 
