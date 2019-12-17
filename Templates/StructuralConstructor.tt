@@ -12,6 +12,10 @@ namespace <#= this.TypeInfo.Namespace #>
 	{
 		public <#= this.TypeInfo.Name #>(<#= this.MakeConstructorParameters() #>)
 		{
+			<# foreach (var g in this.GetGuards()) { #>
+				<#= g.TransformText() #>
+			<# } #>
+			
 			<# foreach (var mi in this.GetDataMembers()) { #>
 				
 				this.<#= mi.name #> = <#= mi.name #>;

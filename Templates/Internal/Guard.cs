@@ -7,21 +7,20 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Aikixd.CodeGeneration.TemplatesT4.Templates
+namespace Aikixd.CodeGeneration.TemplatesT4.Templates.Internal
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Aikixd.CodeGeneration.TemplatesT4.Templates.Internal;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
+    #line 1 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\Guard.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class StructuralConstructor : StructuralConstructorBase
+    public partial class Guard : GuardBase
     {
 #line hidden
         /// <summary>
@@ -29,105 +28,21 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nnamespace ");
+            this.Write("\r\n            if (");
             
-            #line 8 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Namespace));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n{\r\n\t");
-            
-            #line 10 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingStart(this.TypeInfo)));
+            #line 7 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\Guard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Condition));
             
             #line default
             #line hidden
-            this.Write("\r\n\tpartial ");
+            this.Write(")\r\n\t\t\t{\r\n\t\t\t\t");
             
-            #line 11 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(TypeAnalysis.GetTypeKeyword(this.TypeInfo)));
-            
-            #line default
-            #line hidden
-            this.Write(" ");
-            
-            #line 11 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Name));
+            #line 9 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\Internal\Guard.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Reaction));
             
             #line default
             #line hidden
-            this.Write("\r\n\t{\r\n\t\tpublic ");
-            
-            #line 13 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.TypeInfo.Name));
-            
-            #line default
-            #line hidden
-            this.Write("(");
-            
-            #line 13 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.MakeConstructorParameters()));
-            
-            #line default
-            #line hidden
-            this.Write(")\r\n\t\t{\r\n\t\t\t");
-            
-            #line 15 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
- foreach (var g in this.GetGuards()) { 
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\t\t");
-            
-            #line 16 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(g.TransformText()));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n\t\t\t");
-            
-            #line 17 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\t\r\n\t\t\t");
-            
-            #line 19 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
- foreach (var mi in this.GetDataMembers()) { 
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\t\t\r\n\t\t\t\tthis.");
-            
-            #line 21 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(mi.name));
-            
-            #line default
-            #line hidden
-            this.Write(" = ");
-            
-            #line 21 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(mi.name));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n\r\n\t\t\t");
-            
-            #line 23 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write("\t\t\r\n\t\t}\r\n\t}\r\n\t");
-            
-            #line 27 "E:\Xenko Projects\XenoSpace\CodeGeneration.TemplatesT4\Templates\StructuralConstructor.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ClassMaker.MakeTypeNestingEnd(this.TypeInfo)));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n}\r\n");
+            this.Write(";\r\n\t\t\t}");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -139,7 +54,7 @@ namespace Aikixd.CodeGeneration.TemplatesT4.Templates
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class StructuralConstructorBase
+    public class GuardBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
